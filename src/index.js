@@ -1,5 +1,6 @@
 /* -------------------------- Importar dependencias ------------------------- */
 import express from 'express'
+import servicios from './routes/servicios.routes.js'
 
 import { join, dirname } from 'path' // identifica una direccion especifica para concatenar info
 import { fileURLToPath } from 'url'
@@ -31,6 +32,9 @@ app.use(express.json()); // Usa informacion en formato Json
 app.get('/', (req, res) => {
     res.render('index')
 });
+
+app.use(servicios);
+
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')));
 

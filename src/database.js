@@ -1,6 +1,6 @@
 import {createPool} from "mysql2/promise"
 
-const poll = createPool({
+const pool = createPool({
     host: 'localhost',
     port: '3306',
     user: 'lumiere',
@@ -8,4 +8,4 @@ const poll = createPool({
     database: 'lumiere'
 });
 
-export default poll;
+export default pool;

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-upper p-2"> Lista de servicios </h3>
+    {{#if servicios}}
+    <div class="row">
+        
+        {{#each servicios}}
+        <div class="col-md-6">
+            <div class="card m-2">
+                <div class="row no-gutters">
+        
+                    <div class="col-md-4">
+                        <img src="/img/AnalisisDatos.jpg" class="img-fluid rounded m-2" alt="...">
+                    </div>
+        
+                    <div class="col-md-8">
+                        <div class="card-body">
+
+                            <p class="fw-light"><b> Talla:</b> {{nombre_servicio}} <br>
+                            </p>
+        
+                            <p class="card-text fw-lighter">{{descripcion_servicio}}</p>
+        
+                            <a href="/editServicios/{{id_servicio}}" class="btn btn-warning btn-sm"><i
+                                    class="fa-solid fa-pencil"></i> Editar</a>
+        
+                            <a href="/deleteServicio/{{id_servicio}}" class="btn btn-danger btn-sm"><i
+                                    class="fa-solid fa-trash"></i> Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+    <div class="card text-center mx-auto">
+        <div class="card-header">
+            <h3 > Debes crear un servicio</h3>
+        </div>
+        <div class="card-body">
+            <p>Ingresa un nuevo servicio en la aplicacion</p>
+            <a href="/addServicios" class="btn btn-primary">Crear servicio</a>
+        </div>
+    </div>
+    {{/if}}
+    </div>
+</div>
