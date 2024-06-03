@@ -1,6 +1,7 @@
 /* -------------------------- Importar dependencias ------------------------- */
 import express from 'express'
 import servicios from './routes/servicios.routes.js'
+import suscripcion from './routes/sup.routes.js'
 
 import { join, dirname } from 'path' // identifica una direccion especifica para concatenar info
 import { fileURLToPath } from 'url'
@@ -34,6 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(servicios);
+app.use(suscripcion);
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')));

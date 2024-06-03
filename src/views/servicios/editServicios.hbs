@@ -1,0 +1,28 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">
+                        Actualizar Servicio
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editServicios/{{servicio.id_servicio}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="nombre_servicio" class="input-group-text">Nombre del servicio</label>
+                        <input class="form-control"  type="text" name="nombre_servicio" placeholder="Marketing" id="nombre_servicio" value="{{servicio.nombre_servicio}}" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                        <label for="descripcion_servicio" class="input-group-text">Descripcion del servicio</label>
+                        <input class="form-control"  type="text" name="descripcion_servicio" placeholder="Servicio personalizado ..." id="descripcion_servicio" value="{{servicio.descripcion_servicio}}" autofocus required>
+                        </div>
+                        <div class="from-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar servicio</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

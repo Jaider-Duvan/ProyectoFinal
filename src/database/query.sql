@@ -7,6 +7,13 @@ CREATE TABLE servicios(
     descripcion_servicio VARCHAR (200) NOT NULL,
 );
 
+CREATE TABLE suscripcion (
+    Id_sup INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_sup VARCHAR (80) NOT NULL,
+    descripcion_sup VARCHAR (200) NOT NULL,
+    precio FLOAT NOT NULL
+)
+
 SELECT * FROM servicios;
 
 CREATE USER 'lumiere'@'' IDENTIFIED BY 'lumiere'

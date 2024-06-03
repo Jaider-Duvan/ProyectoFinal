@@ -40,4 +40,34 @@ try {
 }
 });
 
+router.get('/editServicios/:id_servicio', async(req,res)=>{
+    try {
+        const {id_servicio}= req.params
+        const [servicio] = await pool.query('SELECT * FROM servicios WHERE id_servicio = ?',[id_servicio]);
+        const servicioEdit = servicio[0]
+      res.render('servicios/editServicios',{servicio:servicioEdit })
+      
+
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+});
+
+router.post('/editServicios/:id_servicio', async(req,res)=>{
+    try {
+        const {id_servicio}= req.params 
+        const {nombre_servicio, descripcion_servicio} =req.body
+        const servicioEdit = {nombre_servicio, descripcion_servicio}
+        await pool.query('UPDATE servicios SET ? WHERE id_servicio = ?',[servicioEdit,id_servicio]);
+
+        res.redirect('/listServicios');
+      
+
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+})
+
+
+
 export default router;

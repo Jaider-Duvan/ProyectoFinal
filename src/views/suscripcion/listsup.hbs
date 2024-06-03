@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-upper p-2"> Lista de suscripciones </h3>
+    {{#if suscripcion}}
+    <div class="row">
+        
+        {{#each suscripcion}}
+        <div class="col-md-6">
+            <div class="card m-2">
+                <div class="row no-gutters">
+        
+                    <div class="col-md-8">
+                        <div class="card-body">
+
+                            <p class="fw-light"><b> suscripcion:</b> {{nombre_sup}} <br>
+                            </p>
+                            <p class="card-text fw-lighter">{{descripcion_sub}}</p>
+                            <p class="card-text fw-lighter">{{precio}}</p>
+        
+                            <a href="/editServicios/{{id_sup}}" class="btn btn-warning btn-sm"><i
+                                    class="fa-solid fa-pencil"></i> Editar</a>
+        
+                            <a href="/deleteServicio/{{id_sup}}" class="btn btn-danger btn-sm"><i
+                                    class="fa-solid fa-trash"></i> Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+    <div class="card text-center mx-auto">
+        <div class="card-header">
+            <h3 > Debes crear una nueva suscripcion</h3>
+        </div>
+        <div class="card-body">
+            <p>Ingresa una nueva suscripcion</p>
+            <a href="/addServicios" class="btn btn-success btn-sm">Crear suscripcion</a>
+        </div>
+    </div>
+    {{/if}}
+    </div>
+</div>

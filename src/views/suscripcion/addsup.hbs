@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">
+                        Crea una nueva suscripcion
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="/addsup" method="post">
+                    <div class="input-group mt-2">
+                        <label for="nombre_sup" class="input-group-text">Nombre de la suscripcion</label>
+                        <input class="form-control"  type="text" name="nombre_sup" placeholder="Marketing 2 meses" id="nombre_sup"  autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                        <label for="descripcion_sup" class="input-group-text">Descripcion de la suscripcion</label>
+                        <input class="form-control"  type="text" name="descripcion_sup" placeholder="Servicio personalizado ..." id="descripcion_sup"  autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                        <label for="precio" class="input-group-text">Precio suscripcion</label>
+                        <input class="form-control"  type="text" name="precio" placeholder="57.99" id="precio"  autofocus required>
+                        </div>
+                        
+                        <div class="from-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Crear suscripcion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
