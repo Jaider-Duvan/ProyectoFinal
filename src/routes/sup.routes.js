@@ -7,7 +7,7 @@ router.get('/addsup',(req,res)=>{
     res.render('suscripcion/addsup')
 })
 
-router.post('/addsub',async (req,res)=>{
+router.post('/addsup',async (req,res)=>{
     try {
         const {nombre_sup, descripcion_sup, precio }= req.body
         const nuevasup = {
@@ -30,22 +30,22 @@ router.get('/listsup', async (req, res) =>{
     }
 })
 
-router.get('/deleteSup/:id_sup', async(req,res)=>{
+router.get('/deletesup/:id_sup', async(req,res)=>{
 try {
     const{id_sup} = req.params
-    await pool.query('DELETE FROM suscripcion WHERE id_sup = ?', [id_sup]);
+    await pool.query('DELETE  FROM  suscripcion WHERE id_sup = ?',[id_sup]);
     res.redirect('/listsup');
 } catch (error) {
     res.status(500).json({message : error.message});
 }
 });
 
-router.get('/editsup/:id_sup', async(req,res)=>{
+router.get('/editsup/:Id_sup', async(req,res)=>{
     try {
-        const {id_sup}= req.params
-        const [sup] = await pool.query('SELECT * FROM suscripcion WHERE id_sup = ?',[id_sup]);
+        const {Id_sup}= req.params
+        const [sup] = await pool.query('SELECT * FROM suscripcion WHERE id_sup = ?',[Id_sup]);
         const supEdit = sup[0]
-      res.render('servicios/editServicios',{sup:supEdit })
+      res.render('suscripcion/editsup',{sup:supEdit })
       
 
     } catch (error) {
@@ -53,12 +53,12 @@ router.get('/editsup/:id_sup', async(req,res)=>{
     }
 });
 
-router.post('/editsup/:id_sup', async(req,res)=>{
+router.post('/editsup/:Id_sup', async(req,res)=>{
     try {
-        const {id_sup}= req.params 
+        const {Id_sup}= req.params 
         const {nombre_sup, descripcion_sup, precio} =req.body
         const supEdit = {nombre_sup, descripcion_sup, precio}
-        await pool.query('UPDATE suscripcion SET ? WHERE id_sup = ?',[supEdit,id_sup]);
+        await pool.query('UPDATE suscripcion SET ? WHERE id_sup = ?',[supEdit,Id_sup]);
 
         res.redirect('/listsup');
       

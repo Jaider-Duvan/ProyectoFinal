@@ -14,13 +14,13 @@
 
                             <p class="fw-light"><b> suscripcion:</b> {{nombre_sup}} <br>
                             </p>
-                            <p class="card-text fw-lighter">{{descripcion_sub}}</p>
+                            <p class="fw-light"><b> descripcion:</b> {{descripcion_sup}} <br>
                             <p class="card-text fw-lighter">{{precio}}</p>
         
-                            <a href="/editServicios/{{id_sup}}" class="btn btn-warning btn-sm"><i
+                            <a href="/editsup/{{Id_sup}}" class="btn btn-warning btn-sm"><i
                                     class="fa-solid fa-pencil"></i> Editar</a>
         
-                            <a href="/deleteServicio/{{id_sup}}" class="btn btn-danger btn-sm"><i
+                            <a href="/deletesup/{{Id_sup}}" class="btn btn-danger btn-sm"><i
                                     class="fa-solid fa-trash"></i> Eliminar</a>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="card-body">
             <p>Ingresa una nueva suscripcion</p>
-            <a href="/addServicios" class="btn btn-success btn-sm">Crear suscripcion</a>
+            <a href="/addsup" class="btn btn-success btn-sm">Crear suscripcion</a>
         </div>
     </div>
     {{/if}}
