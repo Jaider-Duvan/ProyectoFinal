@@ -3,6 +3,24 @@ import pool from '../database.js'
 
 const router= Router();
 
+router.get('/addServicios',(req,res)=>{
+    res.render('servicios/addServicios')
+})
+
+router.post('/addServicios',async(req,res)=>{
+    try {
+        const {nombre_servicio, descripcion_servicio }= req.body
+        const nuevoServicio = {
+            nombre_servicio, descripcion_servicio
+        }
+        await pool.query('INSERT INTO servicios SET ?', [nuevoServicio]);
+        res.redirect('/listServicios');
+
+    } catch (error) {
+        res.status(500).json({message : error.message});
+    }
+})
+
 router.get('/listServicios', async (req, res) =>{
     try {
         const [result] = await pool.query('SELECT * FROM servicios');
